@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
         st.title("Snowflake Warehouse Utilization")
         # Things above here will be run before (and after) you log in.
-        if 'session' not in locals():
+        if 'ST_SNOW_SESS' not in st.session_state:
             with st.expander("Login Help", False):
                 st.markdown(
                 """***account***: this should be the portion https://<account>.snowflakecomputing.com
