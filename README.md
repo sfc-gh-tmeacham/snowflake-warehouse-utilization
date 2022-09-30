@@ -5,13 +5,30 @@ See how your well your Snowflake queries are utilizing your warehouses
 ```
 conda create -n snowflake-warehouse-utilization python=3.8
 conda activate snowflake-warehouse-utilization
+```
 
+Then run one of the following:
+```
+pip install streamlit
+pip install git+https://github.com/sfc-gh-brianhess/st_connection.git#egg=st_connection
+pip install pyarrow~=8.0.0
+pip install matplotlib
+```
+
+or
+
+```
 pipenv install
 pipenv shell
 pipenv install streamlit
 pipenv install git+https://github.com/sfc-gh-brianhess/st_connection.git#egg=st_connection
 pipenv install pyarrow~=8.0.0
 pipenv install matplotlib
+```
+
+## How to Run:
+```
+streamlit run streamlit_app.py
 ```
 
 ## How To Use This Dashboard

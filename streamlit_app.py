@@ -22,10 +22,13 @@ try:
                 unsafe_allow_html=True)
     st.markdown('<style>.vega-embed, canvas.marks{width:100% !important}</style>',
                 unsafe_allow_html=True)
+    # st.markdown('<style>.vega-embed .chart-wrapper canvas{width:100% !important}</style>',
+    #             unsafe_allow_html=True)
+    pass
 except:
     pass
 
-
+disclaimer = """Disclaimer: Use at your own discretion. This site does not store your Snowflake credentials and your credentials are only used as a passthrough to connect to your Snowflake account."""
 
 def main():
     pass
@@ -50,7 +53,8 @@ if __name__ == "__main__":
 
 ***role***: This should remain ***ACCOUNTADMIN*** unless you have delegated access to `query_history` and `warehouse_metering_history`
         """)
-            st.caption("Disclaimer: Use at your own discretion. This site does not store your Snowflake credentials and is only used a passthrough to connect to your Snowflake account.")
+            st.caption(disclaimer)
+
         session = st.connection.snowflake.login({
             'account': 'XXX',
             'user': '',
@@ -259,8 +263,8 @@ For more information and suggestions on how to optimize your Snowflake environme
                                "vconcat": [
                                    {
                                        "mark": {
-                                           "type": "bar",
-                                       },
+                                           "type": "bar", "tooltip": {"content": "data"}
+                                           },
                                        "height": 60,
                                        "width": "container",
                                        "autosize": {
@@ -399,4 +403,4 @@ For more information and suggestions on how to optimize your Snowflake environme
         pass
         # st.write(e)
 
-    st.caption("Disclaimer: Use at your own discretion. This site does not store your Snowflake credentials and is only used a passthrough to connect to your Snowflake account. The metrics shown on this page should be used as information only. Please work with your Snowflake Account team if you have any questions.")
+    st.caption(disclaimer + " The metrics shown on this page should be used as information only. Please work with your Snowflake Account team if you have any questions.")
