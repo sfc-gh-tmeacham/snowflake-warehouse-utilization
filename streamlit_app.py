@@ -362,8 +362,8 @@ For more information and suggestions on how to optimize your Snowflake environme
                                            {
                                                "mark": {"type": "bar", "tooltip": {"content": "data"}},
                                                "width": 60,
-                                            #    "height": height,
-                                               "encoding": {
+                                                "height":len(wh_metering["WAREHOUSE_NAME"].unique().tolist())*25,
+                                                "encoding": {
                                                    "y": {
                                                         "field": "WAREHOUSE_NAME",
                                                         "title": "Wahouse Name",
